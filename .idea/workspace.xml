@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74f43814-f928-4f77-8bc4-3c08cad20715" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Node_js_Dependencies_for_rt02_mindmap.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/script/color-input.js" afterPath="$PROJECT_DIR$/src/script/color-input.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/script/color.js" afterPath="$PROJECT_DIR$/src/script/color.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/script/main.js" afterPath="$PROJECT_DIR$/src/script/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/script/node-form.js" afterPath="$PROJECT_DIR$/src/script/node-form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rt02-mindmap.iml" afterPath="$PROJECT_DIR$/rt02-mindmap.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/script/tree-layout.js" afterPath="$PROJECT_DIR$/src/script/tree-layout.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/rt02-mindmap.iml" afterPath="$PROJECT_DIR$/rt03-mindmap.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Node_js_Dependencies_for_rt02_mindmap.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Node_js_Dependencies_for_rt02_mindmap.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rt02-mindmap.iws" />
@@ -28,8 +23,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -77,7 +71,7 @@
       <file leaf-file-name="node-form.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/script/node-form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="-13.888889" vertical-offset="0" max-vertical-offset="4290">
+            <state line="25" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="4290">
               <folding />
             </state>
           </provider>
@@ -104,7 +98,7 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/script/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="34" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4830">
+            <state line="9" column="34" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="4830">
               <folding>
                 <marker date="1394489346215" expanded="true" signature="1727:1821" placeholder="{...}" />
                 <marker date="1394489346215" expanded="true" signature="3414:7102" placeholder="{...}" />
@@ -117,7 +111,7 @@
       <file leaf-file-name="color-input.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/script/color-input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="25" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1395">
+            <state line="70" column="6" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1395">
               <folding />
             </state>
           </provider>
@@ -126,7 +120,7 @@
       <file leaf-file-name="color.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/script/color.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="18" selection-start="370" selection-end="370" vertical-scroll-proportion="0.4376013" vertical-offset="0" max-vertical-offset="2070">
+            <state line="25" column="40" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="2070">
               <folding />
             </state>
           </provider>
@@ -229,6 +223,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,52 +233,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt02-mindmap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt02-mindmap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt02-mindmap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt02-mindmap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt02-mindmap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt02-mindmap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,7 +243,7 @@
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="settings.nodejs" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/react" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -332,23 +284,6 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <browser start="false" url="" with-js-debugger="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -374,6 +309,23 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -435,39 +387,40 @@
       <workItem from="1394460599944" duration="7267000" />
       <workItem from="1394479391951" duration="4386000" />
       <workItem from="1394483947935" duration="323000" />
-      <workItem from="1394484281164" duration="5589000" />
+      <workItem from="1394484281164" duration="8417000" />
+      <workItem from="1394494283321" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17565000" />
+    <option name="totallyTimeSpent" value="20399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-5" width="1682" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32776618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32776618" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940476" sideWeight="0.67071825" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940476" sideWeight="0.67071825" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32776618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -489,6 +442,59 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/script/node-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react/react.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react/lib/React.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="4" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1515">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/script/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="34" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="4830">
+          <folding>
+            <marker date="1394489346215" expanded="true" signature="1727:1821" placeholder="{...}" />
+            <marker date="1394489346215" expanded="true" signature="3414:7102" placeholder="{...}" />
+            <marker date="1394489346215" expanded="true" signature="3453:4316" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/script/color-input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="6" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/script/color.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="40" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="2070">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/script/tree-layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="43" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0" vertical-offset="932" max-vertical-offset="11100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node-form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="153" column="44" selection-start="3673" selection-end="3673" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4290">
@@ -516,16 +522,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="30" selection-start="599" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1200">
-          <folding />
-        </state>
+        <state line="27" column="30" selection-start="599" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="24" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="750">
-          <folding />
-        </state>
+        <state line="25" column="24" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="750" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node-form.js">
@@ -537,9 +539,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/command.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="23" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="840">
-          <folding />
-        </state>
+        <state line="40" column="23" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/color-input.js">
@@ -551,9 +551,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/jscolor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="989" column="45" selection-start="28763" selection-end="28763" vertical-scroll-proportion="0.0" vertical-offset="13841" max-vertical-offset="15060">
-          <folding />
-        </state>
+        <state line="989" column="45" selection-start="28763" selection-end="28763" vertical-scroll-proportion="0.0" vertical-offset="13841" max-vertical-offset="15060" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/color.js">
@@ -583,16 +581,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="30" selection-start="599" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1200">
-          <folding />
-        </state>
+        <state line="27" column="30" selection-start="599" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="24" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="750">
-          <folding />
-        </state>
+        <state line="25" column="24" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="750" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node-form.js">
@@ -611,9 +605,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/jscolor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="989" column="45" selection-start="28763" selection-end="28763" vertical-scroll-proportion="0.0" vertical-offset="13841" max-vertical-offset="15060">
-          <folding />
-        </state>
+        <state line="989" column="45" selection-start="28763" selection-end="28763" vertical-scroll-proportion="0.0" vertical-offset="13841" max-vertical-offset="15060" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/color.js">
@@ -636,16 +628,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="33" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
-          <folding />
-        </state>
+        <state line="3" column="33" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="705">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="705" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/color.js">
@@ -699,30 +687,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="30" selection-start="599" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1200">
-          <folding />
-        </state>
+        <state line="27" column="30" selection-start="599" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/jscolor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="989" column="45" selection-start="28763" selection-end="28763" vertical-scroll-proportion="0.0" vertical-offset="13841" max-vertical-offset="15060">
-          <folding />
-        </state>
+        <state line="989" column="45" selection-start="28763" selection-end="28763" vertical-scroll-proportion="0.0" vertical-offset="13841" max-vertical-offset="15060" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/command.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="23" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <folding />
-        </state>
+        <state line="40" column="23" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="24" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
-          <folding />
-        </state>
+        <state line="25" column="24" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react/react.js">
@@ -741,14 +721,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/color-input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="25" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1395">
+        <state line="70" column="6" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1395">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/node-form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="-13.888889" vertical-offset="0" max-vertical-offset="4290">
+        <state line="25" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="4290">
           <folding />
         </state>
       </provider>
@@ -773,7 +753,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/script/color.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="18" selection-start="370" selection-end="370" vertical-scroll-proportion="0.4376013" vertical-offset="0" max-vertical-offset="2070">
+        <state line="25" column="40" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="2070">
           <folding />
         </state>
       </provider>

@@ -3,13 +3,154 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/node_modules" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/cx.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/React.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/keyOf.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/merge.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/Danger.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/isNode.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/objMap.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/CSSCore.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/adler32.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/mixInto.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/toArray.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/warning.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOM.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactLink.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactPerf.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/hyphenate.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/invariant.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/keyMirror.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/mergeInto.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/onlyChild.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactMount.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactOwner.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/accumulate.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/isTextNode.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/CSSProperty.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/DOMProperty.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/PooledClass.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMImg.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/Transaction.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getEventKey.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/joinClasses.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactContext.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMForm.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactUpdates.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/containsNode.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/mergeHelpers.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/objMapKeyVal.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/shallowEqual.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/EventListener.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactChildren.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMInput.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/emptyFunction.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getMarkupWrap.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/AutoFocusMixin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/EventConstants.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/EventPluginHub.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactComponent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMButton.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMOption.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMSelect.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactInjection.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactPropTypes.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactRootIndex.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactTestUtils.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/cloneWithProps.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/copyProperties.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getEventTarget.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/performanceNow.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactErrorUtils.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactMountReady.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactMultiChild.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactWithAddons.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ViewportMetrics.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/createArrayFrom.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/flattenChildren.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/EventPluginUtils.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/EventPropagators.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/LinkedStateMixin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/LinkedValueUtils.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMTextarea.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDefaultPerf.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticUIEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/createObjectFrom.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getActiveElement.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/isEventSupported.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ChangeEventPlugin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactCurrentOwner.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMComponent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMSelection.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactEventEmitter.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactStateSetters.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SelectEventPlugin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SimpleEventPlugin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/memoizeStringOnly.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactTextComponent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticDragEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/forEachAccumulated.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/isTextInputElement.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/EventPluginRegistry.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactInputSelection.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactMarkupChecksum.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactPropTransferer.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticFocusEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticMouseEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticTouchEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticWheelEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/dangerousStyleValue.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/traverseAllChildren.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ClientReactRootIndex.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ExecutionEnvironment.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDOMIDOperations.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactInstanceHandles.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactServerRendering.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactTransitionGroup.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ServerReactRootIndex.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/escapeTextForBrowser.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/CSSPropertyOperations.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/DOMChildrenOperations.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/DOMPropertyOperations.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/EnterLeaveEventPlugin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDefaultInjection.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactPutListenerQueue.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactTransitionEvents.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/createNodesFromMarkup.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/CompositionEventPlugin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactEventEmitterMixin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactPropTypeLocations.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticKeyboardEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getTextContentAccessor.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/DefaultEventPluginOrder.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactCSSTransitionGroup.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactCompositeComponent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticClipboardEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/createFullPageComponent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/DefaultDOMPropertyConfig.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDefaultPerfAnalysis.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactComponentEnvironment.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactReconcileTransaction.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/SyntheticCompositionEvent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getNodeForCharacterOffset.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactEventTopLevelCallback.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactMultiChildUpdateTypes.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactPropTypeLocationNames.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getUnboundedScrollPosition.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/shouldUpdateReactComponent.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactTransitionChildMapping.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/MobileSafariClickEventPlugin.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactCSSTransitionGroupChild.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactDefaultBatchingStrategy.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/getReactRootElementInContainer.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/lib/ReactComponentBrowserEnvironment.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/react.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/react/addons.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/node_modules" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES>
       <root url="file://$PROJECT_DIR$/node_modules/react/lib/cx.js" />
       <root url="file://$PROJECT_DIR$/node_modules/react/lib/React.js" />
       <root url="file://$PROJECT_DIR$/node_modules/react/lib/keyOf.js" />
@@ -154,6 +295,8 @@
       <root url="file://$PROJECT_DIR$/node_modules/react/lib/ReactComponentBrowserEnvironment.js" />
       <root url="file://$PROJECT_DIR$/node_modules/react/react.js" />
       <root url="file://$PROJECT_DIR$/node_modules/react/addons.js" />
-    </SOURCES>
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>
