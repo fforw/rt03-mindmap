@@ -3,35 +3,18 @@
 
 var React = require("react");
 
-function path(nodeA,nodeB)
-{
-    var centerY = (nodeA.yCoordinate + nodeB.yCoordinate) / 2;
-
-    return "M" + nodeA.xCoordinate + " " + nodeA.yCoordinate + " Q " + nodeB.xCoordinate  + " " + centerY + " " + nodeB.xCoordinate + " " + nodeB.yCoordinate;
-}
-
 var TEXT_STYLES = { fill: "#111" };
 
 var Node = React.createClass({
 
-    renderLines: function ()
-    {
-        var lines = [];
-
-        var node = this.props.value;
-        node.forEachKid(function(kid)
-        {
-            lines.push(
-                <path key={ kid.id } d={ path(node, kid) } />
-            );
-        });
-        return lines;
+    propTypes: {
+        value: React.PropTypes.object.isRequired,
+        onClick: React.PropTypes.func.isRequired
     },
+
     render: function ()
     {
         var node = this.props.value;
-
-//        ("render node: %o", node);
 
         var x = node.xCoordinate - node.width/2;
         var y = node.yCoordinate - node.height/2;
@@ -43,9 +26,6 @@ var Node = React.createClass({
         return (
 
             <g className="node">
-
-                { this.renderLines() }
-
                 <rect
                     x={ x  } y={ y } width={ node.width } height={ node.height }
                     rx={node.width/8} ry={node.width/8}

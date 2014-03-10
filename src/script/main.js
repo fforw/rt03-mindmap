@@ -6,6 +6,7 @@ var React = require("react");
 var ReactLink = require("./link");
 var NodeForm = require("./node-form");
 var Node = require("./node");
+var Connectors = require("./connectors");
 var treeLayout = require("./tree-layout");
 var measure = require("./measure");
 
@@ -75,15 +76,19 @@ var MindMap = React.createClass({
         var width = window.innerWidth -1;
         var height = window.innerHeight - 1;
 
-        var components = [];
+        var nodes = [];
+        var connectors = [];
 
         var rootNode = this.state.rootNode;
         var app = this;
 
         rootNode.visit(function (node)
         {
-            components.push(
+            nodes.push(
                 <Node key={ node.id } value={ node } onClick={ app.changeEditing.bind(app, node.id) } />
+            );
+            connectors.push(
+                <Connectors key={ "connect-" + node.id } value={ node } />
             );
         });
 
@@ -94,14 +99,17 @@ var MindMap = React.createClass({
             app.setState(root);
         });
 
+        // we need to draw all connectors separately first and then draw the nodes
+        // so no connectors overlap any node.
+
         return (
             <div className="app">
                 <svg version="1.1"
                     width={ width }
                     height = { height }
-                    onClick={ this.handleBackgroundClick }
                     viewBox={ (-width/2) + " " + (-this.state.rootNode.height) + " " + width + " " + height }>
-                    { components }
+                    { connectors }
+                    { nodes }
                 </svg>
                 <NodeForm
                     ref="form"
