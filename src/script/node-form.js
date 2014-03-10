@@ -23,20 +23,19 @@ keyboardNav[63235] = keyboardNav[39];	//right
 keyboardNav[63232] = keyboardNav[38];	//up
 keyboardNav[63233] = keyboardNav[40];	//down
 
-
-var NodeForm;
-NodeForm = React.createClass({
+var NodeForm = React.createClass({
 
     propTypes: {
         width: React.PropTypes.number.isRequired,
         height: React.PropTypes.number.isRequired,
-        control: React.PropTypes.object.isRequired
+        control: React.PropTypes.object.isRequired,
+        noEdit: React.PropTypes.bool.isRequired
     },
 
     getInitialState: function ()
     {
         return {
-            editing: 1
+            editing: this.props.noEdit ? false : 1
         };
     },
 
@@ -121,25 +120,44 @@ NodeForm = React.createClass({
 
     handleDelete: function(ev)
     {
+        var message;
         var control = this.props.control;
         var node = control.findNode(this.state.editing);
 
-        if (!node.parent)
+
+        if (node.parent)
         {
-            return;
+            message = "Delete node '" + node.name + "'";
+
+            if (node.offspring)
+            {
+                message += " and all its children"
+            }
+        }
+        else
+        {
+            message = "Delete MindMap";
         }
 
-        var message = "Delete node '" + node.name;
-
-        if (node.offspring)
+        if (confirm(message + " ?"))
         {
-            message += " and all its children"
-        }
+            if (node.parent)
+            {
+                control.deleteNode(node);
+                this.changeEditing(node.leftsibling || node.parent);
+            }
+            else
+            {
 
-        if (confirm(message + "'?"))
-        {
-            control.deleteNode(node);
-            this.changeEditing(false);
+                console.debug("reset");
+
+                var newNode = control.createNode();
+                newNode.name = "MindMap";
+                control.updateNode(newNode);
+
+                control.setRootNode(newNode);
+                this.changeEditing(newNode.id);
+            }
         }
     },
 
@@ -250,6 +268,7 @@ NodeForm = React.createClass({
                 <div className="toolbar">
                     <Command text="?" action={this.handleHelp} />
                     <Command text="delete" action={this.handleDelete} disabled={!haveParent}/>
+                    <Command text="clear" action={this.handleDelete} disabled={haveParent}/>
                     <Command text="add sibling" action={this.handleAddSibling} disabled={!haveParent} />
                     <Command text="add child" action={this.handleAddChild} />
                 </div>

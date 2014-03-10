@@ -12,6 +12,9 @@ var measure = require("./measure");
 
 var color = require("./color");
 
+// blacklist redundant measured property
+treeLayout.blacklist.measured = 1;
+
 var LAYOUT_OPTIONS = {
     NODE_WIDTH: function(n)
     {
@@ -23,7 +26,20 @@ var LAYOUT_OPTIONS = {
     LEVEL_GAP          : 30    /* Gap between levels?    */
 }
 
-var nextId = 1;
+var saveTimerId;
+
+function supports_html5_storage()
+{
+    try
+    {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e)
+    {
+        return false;
+    }
+
+}
+var nextId = 0;
 
 function Control(app)
 {
@@ -35,7 +51,7 @@ Control.prototype = {
     {
         var node = new treeLayout.TreeLayoutNode();
 
-        node.id = nextId++;
+        node.id = ++nextId;
 
         if (node.id > 1)
         {
@@ -70,7 +86,7 @@ Control.prototype = {
     {
         var layout = new treeLayout.TreeLayout(LAYOUT_OPTIONS);
         layout.layout(root);
-        this.app.setState(root);
+        this.app.setState({rootNode: root});
     },
     findNode: function (id)
     {
@@ -134,23 +150,52 @@ Control.prototype = {
     }
 };
 
+function findMaxId(node)
+{
+    var id = node.id;
+    if (typeof  id === "number")
+    {
+        nextId = Math.max(id, nextId);
+    }
+}
+
 var MindMap = React.createClass({
 
     getInitialState: function()
     {
-        var control = new Control(this);
-        var rootNode = control.createNode();
+        var rootNode, storageNode, control, layout;
+
+        control = new Control(this);
+
+        if (supports_html5_storage())
+        {
+            var json = window.localStorage["mindMap"];
+            storageNode = json && treeLayout.TreeLayoutNode.fromJSON(json);
+
+            console.info("loaded from storage: %o", storageNode);
+        }
+
+        if (storageNode)
+        {
+            storageNode.visit(findMaxId);
+            rootNode = storageNode;
+        }
+        else
+        {
+            rootNode = control.createNode();
+        }
+
         control.updateNode(rootNode);
 
         rootNode.xCoordinate = 0;
         rootNode.yCoordinate = 0;
 
-        var layout = new treeLayout.TreeLayout(LAYOUT_OPTIONS);
+        layout = new treeLayout.TreeLayout(LAYOUT_OPTIONS);
         layout.layout(rootNode);
 
         return {
             rootNode: rootNode,
-            editing: 1
+            editing: storageNode ? false : 1
         }
     },
 
@@ -164,14 +209,52 @@ var MindMap = React.createClass({
         this.forceUpdate();
     },
 
+    save: function()
+    {
+        if (supports_html5_storage())
+        {
+            var json = this.state.rootNode.toJSON();
+            window.localStorage["mindMap"] = json;
+
+            //console.info("saved: %s", json);
+        }
+        saveTimerId = null;
+    },
+
+    componentDidUpdate: function (prevProps, prevState)
+    {
+        if (saveTimerId)
+        {
+            window.clearTimeout(saveTimerId);
+        }
+        saveTimerId = window.setTimeout(this.save, 1000);
+    },
+
+    handleBeforeUnload: function (ev)
+    {
+        if (!supports_html5_storage())
+        {
+            var message = "Your browser does not seem to support local storage. If you leave this page, all" +
+                "data will be lost.";
+            if (ev)
+            {
+                ev.returnValue = message;
+            }
+            return message;
+        }
+        return undefined;
+    },
+
     componentDidMount: function ()
     {
         window.addEventListener("resize", this.handleResize, false);
+        window.addEventListener("beforeunload", this.handleBeforeUnload, false);
     },
 
     componentWillUnmount: function ()
     {
         window.removeEventListener("resize", this.handleResize, false);
+        window.removeEventListener("beforeunload", this.handleBeforeUnload, false);
     },
 
     render: function ()
@@ -209,7 +292,9 @@ var MindMap = React.createClass({
                 <NodeForm
                     ref="form"
                     width={ width } height={ height }
-                    control={ new Control(this) } />
+                    control={ new Control(this) }
+                    noEdit={!this.editing}
+                />
             </div>
         );
     }
@@ -220,6 +305,6 @@ var mounted = React.renderComponent(
     document.getElementById("container"),
     function()
     {
-        console.info("app mounted");
+        console.info("MindApp component mounted");
     }
 );

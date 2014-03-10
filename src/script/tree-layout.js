@@ -17,6 +17,18 @@ ROOT_ORIENTATION   : "NORTH"
 };    
 
 
+var blacklist = {
+    parent: 1,
+    offspring: 1,
+    leftsibling: 1,
+    rightsibling: 1,
+    xCoordinate: 1,
+    yCoordinate: 1,
+    prev: 1,
+    flPrelim: 1,
+    flModifier: 1
+};
+
 /**
  * This class is mostly a suggestion. You can extend it in your own code or give
  * in your own type with the expected members.
@@ -38,8 +50,55 @@ function TreeLayoutNode()
     this.prev = null;
     this.flPrelim = 0;
     this.flModifier = 0;
-    
+
 }
+
+TreeLayoutNode.fromJSON = function (json)
+{
+    var rs, kids, length;
+    var data = typeof json === "string" ? JSON.parse(json) : json;
+
+    var node = new TreeLayoutNode();
+
+    for (var prop in data)
+    {
+        if (data.hasOwnProperty(prop))
+        {
+            if (prop === "kids")
+            {
+                kids = data[prop];
+
+                length = kids.length;
+                if (length && kids[0])
+                {
+                    var ls = TreeLayoutNode.fromJSON(kids[0]);
+                    node.offspring = ls;
+                    ls.parent = node;
+
+                    for (var i = 1; i < length; i++)
+                    {
+                        rs = TreeLayoutNode.fromJSON(kids[i]);
+                        rs.parent = node;
+
+                        ls.rightsibling = rs;
+                        rs.leftsibling = ls;
+
+                        ls = rs;
+                    }
+
+                }
+            }
+            else
+            {
+                node[prop] = data[prop];
+            }
+        }
+    }
+
+    return node;
+}
+
+
 
 TreeLayoutNode.prototype.copy = function()
 {
@@ -119,6 +178,38 @@ TreeLayoutNode.prototype.forEachKid = function (callback, ctx)
         callback.call(ctx, kid);
         kid = kid.rightsibling;
     }
+};
+
+TreeLayoutNode.prototype.toJSON = function ()
+{
+    var l = ["{"];
+
+    for (var prop in this)
+    {
+        if (this.hasOwnProperty(prop) && !blacklist[prop])
+        {
+            l.push(JSON.stringify(prop), ": ", JSON.stringify(this[prop]), ", ");
+        }
+
+        if (!this.parent)
+        {
+            l.push("\"xCoordinate\":", this.xCoordinate, ", \"yCoordinate\":", this.yCoordinate, ", ");
+        }
+    }
+
+    var kid = this.offspring;
+    l.push("\"kids\":[")
+    var first = true;
+    while (kid)
+    {
+        l.push(first? "": ", ", kid.toJSON())
+        kid = kid.rightsibling;
+        first = false;
+    }
+
+    l.push("]}");
+
+    return l.join("");
 };
 
 function TreeLayoutAABB()
@@ -631,7 +722,13 @@ layout:
     }
 };
 
-module.exports = {
+
+var treeLayout  = {
     TreeLayout: TreeLayout,
-    TreeLayoutNode: TreeLayoutNode
+    TreeLayoutNode: TreeLayoutNode,
+    blacklist: blacklist
 };
+
+window.treeLayout = treeLayout;
+
+module.exports = treeLayout;
