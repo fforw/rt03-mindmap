@@ -77,6 +77,12 @@ Control.prototype = {
         }
 
         node.tcolor = (color.contrast("#000", node.color) < 5) ? "fff" : "000";
+
+        if (!node.parent)
+        {
+            document.querySelector("title").textContent = "MindMap: " + node.name;
+        }
+
     },
     getRootNode: function ()
     {
