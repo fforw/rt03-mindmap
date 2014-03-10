@@ -14,6 +14,24 @@ function getNodeId(props)
     return node && node.id;
 }
 
+var keyboardNav = {
+    // left
+    37: ["leftsibling", "parent"],
+    // right
+    39: ["rightsibling", "offspring"],
+    // up
+    38: ["parent"],
+    // down
+    40: ["offspring"]
+};
+
+// aliases for safari
+keyboardNav[63234] = keyboardNav[37];	//left
+keyboardNav[63235] = keyboardNav[39];	//right
+keyboardNav[63232] = keyboardNav[38];	//up
+keyboardNav[63233] = keyboardNav[40];	//down
+
+
 var NodeForm;
 NodeForm = React.createClass({
 
@@ -46,7 +64,7 @@ NodeForm = React.createClass({
 
     handleKey: function (ev)
     {
-        var current, newNode, parentNode;
+        var current, newEditing, navProps;
         var code = ev.keyCode;
 
         if (code === 27)
@@ -58,7 +76,7 @@ NodeForm = React.createClass({
         var isReturn = code === 13;
         var isComma = code === 188;
 
-        if (isReturn || isComma)
+        if (isReturn || isComma || (ev.altKey && (navProps = keyboardNav[code])))
         {
             current = this.findNode(this.state.editing);
             ev.preventDefault();
@@ -67,9 +85,25 @@ NodeForm = React.createClass({
             {
                 this.handleAddChild();
             }
-            else 
+            else if(isComma)
             {
                 this.handleAddSibling();
+            }
+            else
+            {
+                newEditing = current[navProps[0]];
+                if (!newEditing && navProps.length === 2)
+                {
+                    newEditing = current[navProps[1]];
+                }
+                if (newEditing)
+                {
+                    console.debug("keyboard nav to: %o", newEditing)
+
+                    this.setState({
+                        editing: newEditing.id
+                    });
+                }
             }
         }
         else
@@ -80,7 +114,7 @@ NodeForm = React.createClass({
 
     handleHelp: function(ev)
     {
-        alert("Hotkeys for adding: Return = add child\n, = add sibling");
+        alert("Hotkeys for adding:\nReturn = add child\n, = add sibling,\nALT + cursor = navigate");
     },
 
     handleDelete: function(ev)
