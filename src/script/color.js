@@ -6,9 +6,17 @@ var PERCEPTIVE_FACTOR_RED = 0.2126;
 var PERCEPTIVE_FACTOR_GREEN = 0.7152;
 var PERCEPTIVE_FACTOR_BLUE = 0.0722;
 
+var colorRegExp = /#?([0-9a-f]{3}|[0-9a-f]{6})/gi;
+
 function checkColor(color)
 {
-    var col = color.substring(color[0] === "#" ? 1: 0);
+
+    var m;
+    if (typeof color !== "string" || !(m = colorRegExp.exec(color)))
+    {
+        return null;
+    }
+    var col = m[1];
 
     if (col.length == 3)
     {
