@@ -72,7 +72,7 @@ Control.prototype = {
         var name = node.name;
         if (name !== node.measured)
         {
-            node.width = measure(name) + 16;
+            node.width = (measure(name) + 16)|0;
             node.measured = name;
         }
 
