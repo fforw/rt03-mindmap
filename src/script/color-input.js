@@ -3,9 +3,12 @@
 
 var React = require("react");
 var ReactLink = require("./link");
+var color = require("./color");
 
 // enhances color input by class
-require("./jscolor");
+var jscolor = require("./jscolor");
+
+jscolor.binding = false;
 
 var ColorInput = React.createClass({
 
@@ -15,12 +18,17 @@ var ColorInput = React.createClass({
 
     checkValue: function()
     {
-        var v = this.getDOMNode().value;
-        var link = this.props.valueLink;
-
-        if (link.value !== v)
+        if (this.isMounted())
         {
-            link.requestChange(v);
+            var v = this.getDOMNode().value;
+            if (color.isColor(v))
+            {
+                var link = this.props.valueLink;
+                if (link.value !== v)
+                {
+                    link.requestChange(v);
+                }
+            }
         }
     },
 
@@ -33,12 +41,34 @@ var ColorInput = React.createClass({
 
     handleBlur: function (ev)
     {
-        clearInterval(this.intervalId);
+        if (this.intervalId)
+        {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+        }
     },
 
     componentDidUpdate: function (prevProps, prevState)
     {
-        this.getDOMNode().value = this.props.valueLink.value;
+        var element = this.getDOMNode();
+        element.value = this.props.valueLink.value;
+
+        this.widget.importColor();
+    },
+
+    componentWillUnmount: function ()
+    {
+        if (this.intervalId)
+        {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+        }
+    },
+
+    componentDidMount: function ()
+    {
+        this.widget = new jscolor.color(this.getDOMNode());
+        console.debug("widget = %o", this.widget);
     },
 
     render: function ()
@@ -49,7 +79,7 @@ var ColorInput = React.createClass({
                     type="text"
                     defaultValue={this.props.valueLink.value}
                     onFocus={this.handleFocus}
-                    onBlur={this.handleFocus}
+                    onBlur={this.handleBlur}
                 />
         );
     }

@@ -3,7 +3,6 @@
 
 var React = require("react");
 
-var TEXT_STYLES = { fill: "#111" };
 
 var Node = React.createClass({
 
@@ -23,6 +22,10 @@ var Node = React.createClass({
             fill: "#" + node.color
         };
 
+        var textStyles = {
+            fill: "#" + node.tcolor
+        };
+
         return (
 
             <g className="node">
@@ -31,7 +34,7 @@ var Node = React.createClass({
                     rx={node.width/8} ry={node.width/8}
                     style={ styles }  onClick={ this.props.onClick }/>
 
-                <text x={ x + 8 } y={ y + 18 } style={ TEXT_STYLES } onClick={ this.props.onClick }>{ node.name }</text>
+                <text x={ x + 8 } y={ y + 18 } style={ textStyles } onClick={ this.props.onClick }>{ node.name }</text>
             </g>
 
         );

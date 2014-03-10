@@ -6,14 +6,6 @@ var ReactLink = require("./link");
 var ColorInput = require("./color-input");
 var Command = require("./command");
 
-var measure = require("./measure");
-
-function getNodeId(props)
-{
-    var node = props.valueLink.value;
-    return node && node.id;
-}
-
 var keyboardNav = {
     // left
     37: ["leftsibling", "parent"],
@@ -38,8 +30,7 @@ NodeForm = React.createClass({
     propTypes: {
         width: React.PropTypes.number.isRequired,
         height: React.PropTypes.number.isRequired,
-        valueLink: React.PropTypes.instanceOf(ReactLink).isRequired,
-        createNode: React.PropTypes.func.isRequired
+        control: React.PropTypes.object.isRequired
     },
 
     getInitialState: function ()
@@ -51,7 +42,7 @@ NodeForm = React.createClass({
 
     createNodeFieldLink: function (node, name)
     {
-        var rootLink = this.props.valueLink;
+        var control = this.props.control;
 
         return new ReactLink(node && node[name], function (v)
         {
@@ -59,12 +50,8 @@ NodeForm = React.createClass({
             {
                 node[name] = v;
 
-                if (name === "name")
-                {
-                    node.width = measure(node.name) + 16;
-                }
-
-                rootLink.requestChange(rootLink.value);
+                control.updateNode(node);
+                control.setRootNode(control.getRootNode());
             }
         });
     },
@@ -73,7 +60,9 @@ NodeForm = React.createClass({
     {
         var current, newEditing, navProps;
         var code = ev.keyCode;
-        var withAltKey = ev.altKey;
+        var withModifier = ev.altKey || ev.metaKey  ;
+
+        var control = this.props.control;
 
         if (code === 27)
         {
@@ -81,7 +70,7 @@ NodeForm = React.createClass({
             fn && fn.call(null);
         }
 
-        if (code === 46 && withAltKey)
+        if (code === 46 && withModifier)
         {
             this.handleDelete(ev);
         }
@@ -89,9 +78,9 @@ NodeForm = React.createClass({
         var isReturn = code === 13;
         var isComma = code === 188;
 
-        if (isReturn || isComma || (withAltKey && (navProps = keyboardNav[code])))
+        if (isReturn || isComma || (withModifier && (navProps = keyboardNav[code])))
         {
-            current = this.findNode(this.state.editing);
+            current = control.findNode(this.state.editing);
             ev.preventDefault();
 
             if (isReturn)
@@ -111,7 +100,7 @@ NodeForm = React.createClass({
                 }
                 if (newEditing)
                 {
-                    console.debug("keyboard nav to: %o", newEditing)
+                    //console.debug("keyboard nav to: %o", newEditing)
 
                     this.setState({
                         editing: newEditing.id
@@ -121,18 +110,19 @@ NodeForm = React.createClass({
         }
         else
         {
-            console.debug("code : %o", code);
+            //console.debug("code : %o", code);
         }
     },
 
     handleHelp: function(ev)
     {
-        alert("Hotkeys for adding:\nReturn = add child\n, = add sibling,\nALT + cursor = navigate, ALT+Delete = delete");
+        alert("Hotkeys for adding:\nReturn = add child\n',' = add sibling,\nALT + cursor = navigate, ALT+Delete = delete");
     },
 
     handleDelete: function(ev)
     {
-        var node = this.findNode(this.state.editing);
+        var control = this.props.control;
+        var node = control.findNode(this.state.editing);
 
         if (!node.parent)
         {
@@ -148,82 +138,27 @@ NodeForm = React.createClass({
 
         if (confirm(message + "'?"))
         {
-            this.deleteNode(node);
+            control.deleteNode(node);
+            this.changeEditing(false);
         }
     },
 
     handleAddChild: function()
     {
-        this.addNode(this.findNode(this.state.editing));
+        var control = this.props.control;
+        var newNode = control.addNode(control.findNode(this.state.editing));
+        this.changeEditing(newNode.id);
     },
 
     handleAddSibling: function()
     {
-        var node = this.findNode(this.state.editing);
+        var control = this.props.control;
+        var node = control.findNode(this.state.editing);
         if (node && node.parent)
         {
-            this.addNode(node.parent, node);
+            var newNode = control.addNode(node.parent, node);
+            this.changeEditing(newNode.id);
         }
-    },
-
-    findNode: function (id)
-    {
-        if (id === false)
-        {
-            return null;
-        }
-
-        var found;
-        this.props.valueLink.value.visit(function (n)
-        {
-            if (n.id === id)
-            {
-                found = n;
-                return false;
-            }
-            return true;
-        })
-
-        return found;
-    },
-
-    addNode: function(node, after)
-    {
-        var target = this.findNode(node.id);
-        var newNode = this.props.createNode();
-        target.addChild(newNode, after);
-
-        var link = this.props.valueLink;
-        var rootNode = link.value;
-
-        this.changeEditing(newNode.id);
-
-        link.requestChange(rootNode);
-    },
-
-    deleteNode: function(node)
-    {
-        var link = this.props.valueLink;
-        var rootNode = link.value;
-
-        var ls = node.leftsibling;
-        var rs = node.rightsibling;
-        if (ls)
-        {
-            ls.rightsibling = rs;
-        }
-        else
-        {
-            node.parent.offspring = null;
-        }
-
-        if (rs)
-        {
-            rs.leftsibling = ls;
-        }
-
-        this.changeEditing(false);
-        link.requestChange(rootNode);
     },
 
     changeEditing: function(id)
@@ -272,14 +207,17 @@ NodeForm = React.createClass({
         var width = this.props.width;
         var height = this.props.height;
 
-        var node = this.findNode(this.state.editing);
+        var control = this.props.control;
+        var node = control.findNode(this.state.editing);
 
         var scale = 1;
         var positionStyles = {};
 
         var haveParent = false;
+        var id = false;
         if (node)
         {
+            id = node.id;
             positionStyles = {
                 display: "block",
                 left: width / 2 + node.xCoordinate * scale - 100,

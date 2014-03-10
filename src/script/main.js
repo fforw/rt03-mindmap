@@ -10,6 +10,7 @@ var Connectors = require("./connectors");
 var treeLayout = require("./tree-layout");
 var measure = require("./measure");
 
+var color = require("./color");
 
 var LAYOUT_OPTIONS = {
     NODE_WIDTH: function(n)
@@ -23,34 +24,123 @@ var LAYOUT_OPTIONS = {
 }
 
 var nextId = 1;
-function createNode()
+
+function Control(app)
 {
-    var node = new treeLayout.TreeLayoutNode();
-
-    node.id = nextId++;
-
-    if (node.id > 1)
-    {
-        node.name = "New Node " + node.id;
-    }
-    else
-    {
-        node.name = "MindMap";
-    }
-
-    node.color = "bff5ff";
-    node.width = measure(node.name) + 16;
-    node.height = LAYOUT_OPTIONS.NODE_HEIGHT;
-
-    return  node;
+    this.app = app;
 }
 
+Control.prototype = {
+    createNode: function ()
+    {
+        var node = new treeLayout.TreeLayoutNode();
+
+        node.id = nextId++;
+
+        if (node.id > 1)
+        {
+            node.name = "New Node " + node.id;
+        }
+        else
+        {
+            node.name = "MindMap";
+        }
+
+        node.color = "bff5ff";
+        node.height = LAYOUT_OPTIONS.NODE_HEIGHT;
+
+        return  node;
+    },
+    updateNode:function (node)
+    {
+        var name = node.name;
+        if (name !== node.measured)
+        {
+            node.width = measure(name) + 16;
+            node.measured = name;
+        }
+
+        node.tcolor = (color.contrast("#000", node.color) < 5) ? "fff" : "000";
+    },
+    getRootNode: function ()
+    {
+        return this.app.state.rootNode;
+    },
+    setRootNode: function(root)
+    {
+        var layout = new treeLayout.TreeLayout(LAYOUT_OPTIONS);
+        layout.layout(root);
+        this.app.setState(root);
+    },
+    findNode: function (id)
+    {
+        if (id === false)
+        {
+            return null;
+        }
+
+        var found;
+        this.getRootNode().visit(function (n)
+        {
+            if (n.id === id)
+            {
+                found = n;
+                return false;
+            }
+            return true;
+        })
+
+        return found;
+    },
+
+    addNode: function(node, after)
+    {
+        var target = this.findNode(node.id);
+        var newNode = this.createNode();
+
+        newNode.color = after ? after.color: node.color;
+
+        this.updateNode(newNode);
+
+        target.addChild(newNode, after);
+
+        var rootNode = this.getRootNode();
+        this.setRootNode(rootNode);
+
+        return newNode;
+    },
+
+    deleteNode: function(node)
+    {
+        var rootNode = this.getRootNode();
+
+        var ls = node.leftsibling;
+        var rs = node.rightsibling;
+        if (ls)
+        {
+            ls.rightsibling = rs;
+        }
+        else
+        {
+            node.parent.offspring = null;
+        }
+
+        if (rs)
+        {
+            rs.leftsibling = ls;
+        }
+
+        this.setRootNode(rootNode);
+    }
+};
 
 var MindMap = React.createClass({
 
     getInitialState: function()
     {
-        var rootNode = createNode();
+        var control = new Control(this);
+        var rootNode = control.createNode();
+        control.updateNode(rootNode);
 
         rootNode.xCoordinate = 0;
         rootNode.yCoordinate = 0;
@@ -69,17 +159,34 @@ var MindMap = React.createClass({
         this.refs.form.changeEditing(id);
     },
 
+    handleResize: function (ev)
+    {
+        this.forceUpdate();
+    },
+
+    componentDidMount: function ()
+    {
+        window.addEventListener("resize", this.handleResize, false);
+    },
+
+    componentWillUnmount: function ()
+    {
+        window.removeEventListener("resize", this.handleResize, false);
+    },
+
     render: function ()
     {
-        var width = window.innerWidth -1;
+        var width = window.innerWidth - 1;
         var height = window.innerHeight - 1;
 
+        var rootNode = this.state.rootNode;
+
+        // we need to draw all connectors separately first and then draw the nodes
+        // so no connectors overlap any node.
         var nodes = [];
         var connectors = [];
 
-        var rootNode = this.state.rootNode;
         var app = this;
-
         rootNode.visit(function (node)
         {
             nodes.push(
@@ -89,16 +196,6 @@ var MindMap = React.createClass({
                 <Connectors key={ "connect-" + node.id } value={ node } />
             );
         });
-
-        var link = new ReactLink(this.state.rootNode, function (root)
-        {
-            var layout = new treeLayout.TreeLayout(LAYOUT_OPTIONS);
-            layout.layout(root);
-            app.setState(root);
-        });
-
-        // we need to draw all connectors separately first and then draw the nodes
-        // so no connectors overlap any node.
 
         return (
             <div className="app">
@@ -111,9 +208,8 @@ var MindMap = React.createClass({
                 </svg>
                 <NodeForm
                     ref="form"
-                    valueLink={ link }
                     width={ width } height={ height }
-                    createNode={createNode} />
+                    control={ new Control(this) } />
             </div>
         );
     }
