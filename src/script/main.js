@@ -40,7 +40,7 @@ function createNode()
     }
 
     node.color = "bff5ff";
-    node.width = measure(node.name) + 8;
+    node.width = measure(node.name) + 12;
     node.height = LAYOUT_OPTIONS.NODE_HEIGHT;
 
     return  node;

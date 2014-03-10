@@ -46,8 +46,12 @@ var Node = React.createClass({
 
                 { this.renderLines() }
 
-                <rect x={ x  } y={ y } width={ node.width } height={ node.height } style={ styles }  onClick={ this.props.onClick }/>
-                <text x={ x + 4 } y={ y + 18 } style={ TEXT_STYLES } onClick={ this.props.onClick }>{ node.name }</text>
+                <rect
+                    x={ x  } y={ y } width={ node.width } height={ node.height }
+                    rx={node.width/8} ry={node.width/8}
+                    style={ styles }  onClick={ this.props.onClick }/>
+
+                <text x={ x + 6 } y={ y + 18 } style={ TEXT_STYLES } onClick={ this.props.onClick }>{ node.name }</text>
             </g>
 
         );
