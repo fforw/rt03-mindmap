@@ -61,7 +61,7 @@ NodeForm = React.createClass({
 
                 if (name === "name")
                 {
-                    node.width = measure(node.name) + 12;
+                    node.width = measure(node.name) + 16;
                 }
 
                 rootLink.requestChange(rootLink.value);
