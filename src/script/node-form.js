@@ -66,6 +66,7 @@ NodeForm = React.createClass({
     {
         var current, newEditing, navProps;
         var code = ev.keyCode;
+        var withAltKey = ev.altKey;
 
         if (code === 27)
         {
@@ -73,10 +74,15 @@ NodeForm = React.createClass({
             fn && fn.call(null);
         }
 
+        if (code === 46 && withAltKey)
+        {
+            this.handleDelete(ev);
+        }
+
         var isReturn = code === 13;
         var isComma = code === 188;
 
-        if (isReturn || isComma || (ev.altKey && (navProps = keyboardNav[code])))
+        if (isReturn || isComma || (withAltKey && (navProps = keyboardNav[code])))
         {
             current = this.findNode(this.state.editing);
             ev.preventDefault();
@@ -108,20 +114,34 @@ NodeForm = React.createClass({
         }
         else
         {
-//            ("code : %o", code);
+            console.debug("code : %o", code);
         }
     },
 
     handleHelp: function(ev)
     {
-        alert("Hotkeys for adding:\nReturn = add child\n, = add sibling,\nALT + cursor = navigate");
+        alert("Hotkeys for adding:\nReturn = add child\n, = add sibling,\nALT + cursor = navigate, ALT+Delete = delete");
     },
 
     handleDelete: function(ev)
     {
-        if (confirm("Delete node?"))
+        var node = this.findNode(this.state.editing);
+
+        if (!node.parent)
         {
-            this.deleteNode(this.findNode(this.state.editing));
+            return;
+        }
+
+        var message = "Delete node '" + node.name;
+
+        if (node.offspring)
+        {
+            message += " and all its children"
+        }
+
+        if (confirm(message + "'?"))
+        {
+            this.deleteNode(node);
         }
     },
 
@@ -217,7 +237,6 @@ NodeForm = React.createClass({
                 this.changeEditing(false);
             }
         }
-
     },
     
     componentDidMount: function ()
