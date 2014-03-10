@@ -68,7 +68,6 @@ var ColorInput = React.createClass({
     componentDidMount: function ()
     {
         this.widget = new jscolor.color(this.getDOMNode());
-        console.debug("widget = %o", this.widget);
     },
 
     render: function ()
