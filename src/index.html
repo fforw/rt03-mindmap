@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Example 2: mind map</title>
+
+    <style type="text/css">
+        body {
+            background: #555;
+            overflow: hidden;
+        }
+
+        .app
+        {
+            position: relative;
+        }
+
+        .node-form
+        {
+            font-size: 15px;
+            position: absolute;
+            padding: 4px;
+            background: #ddd;
+            width: 200px;
+            height: 7em;
+        }
+
+        .node-form input.color, .node-form input.text
+        {
+            border: 1px solid #bbb;
+            width: 90%;
+        }
+
+        .node-form label
+        {
+            color: #555;
+            font-size: 0.8em;
+        }
+
+        .node-form a.command
+        {
+            color: #555;
+            font-size: 0.8em;
+            margin-right: 1ex;
+        }
+
+        /* SVG styles */
+
+        g.node text {
+            font-family: sans-serif;
+            font-size: 13px;
+        }
+
+        g.node path {
+            stroke: #ccc;
+            stroke-width: 3px;
+            fill: transparent;
+        }
+
+        .hidden {
+            position: absolute;
+            top: 0;
+            left: -10000px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div id="container">
+</div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
