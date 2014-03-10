@@ -5,6 +5,12 @@ var React = require("react");
 
 var Command = React.createClass({
 
+    propTypes: {
+        name: React.PropTypes.string,
+        disabled: React.PropTypes.bool,
+        text: React.PropTypes.string.isRequired
+    },
+
     getDefaultProps: function ()
     {
         return {

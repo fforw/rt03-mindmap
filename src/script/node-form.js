@@ -35,6 +35,13 @@ keyboardNav[63233] = keyboardNav[40];	//down
 var NodeForm;
 NodeForm = React.createClass({
 
+    propTypes: {
+        width: React.PropTypes.number.isRequired,
+        height: React.PropTypes.number.isRequired,
+        valueLink: React.PropTypes.instanceOf(ReactLink).isRequired,
+        createNode: React.PropTypes.func.isRequired
+    },
+
     getInitialState: function ()
     {
         return {

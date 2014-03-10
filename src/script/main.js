@@ -29,8 +29,6 @@ function createNode()
 
     node.id = nextId++;
 
-    node.name = "New Node";
-
     if (node.id > 1)
     {
         node.name = "New Node " + node.id;

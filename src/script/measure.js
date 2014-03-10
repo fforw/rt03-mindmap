@@ -41,8 +41,6 @@ function measure(text)
     React.unmountComponentAtNode(container);
     document.body.removeChild(container);
 
-//    ("width : %o", width);
-
     return width;
 }
 

@@ -2,11 +2,16 @@
 "use strict";
 
 var React = require("react");
+var ReactLink = require("./link");
 
 // enhances color input by class
 require("./jscolor");
 
 var ColorInput = React.createClass({
+
+    propTypes: {
+        valueLink: React.PropTypes.instanceOf(ReactLink).isRequired
+    },
 
     checkValue: function()
     {
