@@ -16,35 +16,16 @@ var ColorInput = React.createClass({
         valueLink: React.PropTypes.instanceOf(ReactLink).isRequired
     },
 
-    checkValue: function()
+    handleChange: function(ev)
     {
-        if (this.isMounted())
+        var v = this.getDOMNode().value;
+        if (color.isColor(v))
         {
-            var v = this.getDOMNode().value;
-            if (color.isColor(v))
+            var link = this.props.valueLink;
+            if (link.value !== v)
             {
-                var link = this.props.valueLink;
-                if (link.value !== v)
-                {
-                    link.requestChange(v);
-                }
+                link.requestChange(v);
             }
-        }
-    },
-
-    // the color picker swallows change event, so we just fix this with an interval that checks for
-    // changed values and propagates them. not ideal :\
-    handleFocus: function (ev)
-    {
-        this.intervalId = setInterval(this.checkValue, 200);
-    },
-
-    handleBlur: function (ev)
-    {
-        if (this.intervalId)
-        {
-            clearInterval(this.intervalId);
-            this.intervalId = null;
         }
     },
 
@@ -58,16 +39,16 @@ var ColorInput = React.createClass({
 
     componentWillUnmount: function ()
     {
-        if (this.intervalId)
-        {
-            clearInterval(this.intervalId);
-            this.intervalId = null;
-        }
+        var elem = this.getDOMNode();
+        elem.removeEventListener("change", this.handleChange, false);
     },
 
     componentDidMount: function ()
     {
-        this.widget = new jscolor.color(this.getDOMNode());
+        var elem = this.getDOMNode();
+        this.widget = new jscolor.color(elem);
+
+        elem.addEventListener("change", this.handleChange, false);
     },
 
     render: function ()
@@ -77,8 +58,6 @@ var ColorInput = React.createClass({
                     className="color"
                     type="text"
                     defaultValue={this.props.valueLink.value}
-                    onFocus={this.handleFocus}
-                    onBlur={this.handleBlur}
                 />
         );
     }
