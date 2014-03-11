@@ -1,8 +1,8 @@
 /** @jsx React.DOM */
 
 var React = require("react");
+var ReactLink = require("react/lib/ReactLink");
 
-var ReactLink = require("./link");
 var ColorInput = require("./color-input");
 var Command = require("./command");
 

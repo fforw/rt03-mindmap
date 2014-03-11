@@ -2,8 +2,8 @@
 "use strict";
 
 var React = require("react");
+var ReactLink = require("react/lib/ReactLink");
 
-var ReactLink = require("./link");
 var NodeForm = require("./node-form");
 var Node = require("./node");
 var Connectors = require("./connectors");

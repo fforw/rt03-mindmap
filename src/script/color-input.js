@@ -2,7 +2,8 @@
 "use strict";
 
 var React = require("react");
-var ReactLink = require("./link");
+var ReactLink = require("react/lib/ReactLink");
+
 var color = require("./color");
 
 // enhances color input by class
