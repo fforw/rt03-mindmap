@@ -1,7 +1,7 @@
 React Example 3: Mind Map
 =========================
 
-Simple SVG mind map tool without actual storage.
+Simple SVG mind map tool with simple localStorage.
 
 Prerequisites
 -------------
