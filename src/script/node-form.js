@@ -29,13 +29,13 @@ var NodeForm = React.createClass({
         width: React.PropTypes.number.isRequired,
         height: React.PropTypes.number.isRequired,
         control: React.PropTypes.object.isRequired,
-        noEdit: React.PropTypes.bool.isRequired
+        editing: React.PropTypes.bool.isRequired
     },
 
     getInitialState: function ()
     {
         return {
-            editing: this.props.noEdit ? false : 1
+            editing: this.props.editing
         };
     },
 

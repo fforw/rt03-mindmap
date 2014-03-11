@@ -201,7 +201,7 @@ var MindMap = React.createClass({
 
         return {
             rootNode: rootNode,
-            editing: storageNode ? false : 1
+            editing: storageNode ? false : rootNode.id
         }
     },
 
@@ -299,7 +299,7 @@ var MindMap = React.createClass({
                     ref="form"
                     width={ width } height={ height }
                     control={ new Control(this) }
-                    noEdit={!this.editing}
+                    editing={this.state.editing}
                 />
             </div>
         );
