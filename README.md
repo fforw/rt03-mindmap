@@ -1,5 +1,5 @@
-React Example 2: Mind Map
-==========
+React Example 3: Mind Map
+=========================
 
 Simple SVG mind map tool without actual storage.
 
