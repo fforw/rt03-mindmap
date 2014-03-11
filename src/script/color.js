@@ -6,7 +6,7 @@ var PERCEPTIVE_FACTOR_RED = 0.2126;
 var PERCEPTIVE_FACTOR_GREEN = 0.7152;
 var PERCEPTIVE_FACTOR_BLUE = 0.0722;
 
-var colorRegExp = /#?([0-9a-f]{3}|[0-9a-f]{6})/gi;
+var colorRegExp = /^(#)?([0-9a-f]+)$/i;
 
 function checkColor(color)
 {
@@ -16,7 +16,7 @@ function checkColor(color)
     {
         return null;
     }
-    var col = m[1];
+    var col = m[2];
 
     if (col.length == 3)
     {
