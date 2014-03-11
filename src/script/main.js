@@ -144,7 +144,7 @@ Control.prototype = {
         }
         else
         {
-            node.parent.offspring = null;
+            node.parent.offspring = rs;
         }
 
         if (rs)
