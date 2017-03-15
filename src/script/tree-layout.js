@@ -627,11 +627,11 @@ _secondWalk:
                 lyTemp = this.yTopAdjustment - curHeight;
                 break;
              case "EAST":
-                 lxTemp = this.xTopAdjustment - curHeight;
+                 lxTemp = this.xTopAdjustment + curHeight;
                  lyTemp = this.yTopAdjustment - (pThisNode.flPrelim + this.flModsum);
                 break;
              case "WEST":
-                 lxTemp = this.xTopAdjustment + curHeight;
+                 lxTemp = this.xTopAdjustment - curHeight;
                  lyTemp = this.yTopAdjustment - (pThisNode.flPrelim + this.flModsum);
                 break;
           }
